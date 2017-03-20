@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66A5F183-3065-4A77-A109-779D7984990F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>udpkit</RootNamespace>
+    <AssemblyName>udpkit</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\managed\debug\</OutputPath>
+    <DefineConstants>DEBUG;UDPKIT_DLL_UDPKIT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\managed\release\</OutputPath>
+    <DefineConstants>UDPKIT_DLL_UDPKIT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\shared\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="udpReliableBuffer.cs" />
+    <Compile Include="reliable\udpReliableRecvQueue.cs" />
+    <Compile Include="reliable\udpSequencedObject.cs" />
+    <Compile Include="slimmath\half.cs" />
+    <Compile Include="udpAddress.cs" />
+    <Compile Include="udpAssert.cs" />
+    <Compile Include="reliable\udpReliableSendQueue.cs" />
+    <Compile Include="udpSocket.Simulation.cs" />
+    <Compile Include="udpStream.cs" />
+    <Compile Include="udpByteConverter.cs" />
+    <Compile Include="udpCommand.cs" />
+    <Compile Include="udpConfig.cs" />
+    <Compile Include="udpConnection.cs" />
+    <Compile Include="udpStats.cs" />
+    <Compile Include="udpEndpoint.cs" />
+    <Compile Include="udpEvent.cs" />
+    <Compile Include="udpException.cs" />
+    <Compile Include="udpHeader.cs" />
+    <Compile Include="udpLog.cs" />
+    <Compile Include="udpMath.cs" />
+    <Compile Include="udpPlatform.cs" />
+    <Compile Include="udpRingBuffer.cs" />
+    <Compile Include="udpSendHandle.cs" />
+    <Compile Include="udpSerializer.cs" />
+    <Compile Include="udpSet.cs" />
+    <Compile Include="udpSocket.cs" />
+    <Compile Include="udpSocketMultiplexer.cs" />
+    <Compile Include="udpStreamPool.cs" />
+    <Compile Include="udpStreamSerializer.cs" />
+    <Compile Include="udpUtils.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
